@@ -18,4 +18,3 @@ python-dotenv
 
 numpy
 scikit-learn
-sentence-transformers
