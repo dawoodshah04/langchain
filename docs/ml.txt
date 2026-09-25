@@ -1,0 +1,118 @@
+Machine Learning and Deep Learning
+What is Machine Learning?
+
+Machine Learning (ML) is a branch of artificial intelligence that allows computers to learn patterns from data and make predictions or decisions without being explicitly programmed for every individual task.
+
+Machine learning is commonly divided into supervised learning, unsupervised learning, semi-supervised learning, and reinforcement learning.
+
+Traditional Machine Learning
+
+Traditional machine learning generally refers to machine learning approaches that use algorithms such as linear regression, logistic regression, decision trees, random forests, support vector machines, K-nearest neighbors, Naive Bayes, and clustering algorithms.
+
+Supervised Learning
+
+In supervised learning, a model learns from labeled data. Each training example contains input data and a known target or answer.
+
+Supervised learning includes two major tasks:
+
+Classification
+
+Classification predicts a category or class.
+
+Examples include:
+
+Spam or not spam email classification
+
+Customer churn prediction
+
+Disease classification
+
+Fraud detection
+
+Image category classification
+
+Common classification algorithms include logistic regression, decision trees, random forests, support vector machines, K-nearest neighbors, and Naive Bayes.
+
+Regression
+
+Regression predicts a numerical value.
+
+Examples include:
+
+House price prediction
+
+Sales forecasting
+
+Temperature prediction
+
+Student score prediction
+
+Common regression algorithms include linear regression, polynomial regression, decision tree regression, random forest regression, and gradient boosting.
+
+Unsupervised Learning
+
+In unsupervised learning, the training data does not contain predefined labels. The model attempts to discover patterns or structures within the data.
+
+Clustering
+
+Clustering groups similar data points together.
+
+Common clustering algorithms include K-Means, DBSCAN, and hierarchical clustering.
+
+For example, a business may use clustering to divide customers into groups based on purchasing behavior.
+
+Dimensionality Reduction
+
+Dimensionality reduction reduces the number of features in a dataset while attempting to preserve important information.
+
+Principal Component Analysis (PCA) is a common dimensionality-reduction technique.
+
+Semi-Supervised Learning
+
+Semi-supervised learning uses a combination of labeled and unlabeled data. It is useful when obtaining labels is expensive or time-consuming but large amounts of unlabeled data are available.
+
+For example, a dataset may contain 1,000 labeled images and 9,000 unlabeled images. A semi-supervised learning approach can use both sets of data during training.
+
+Reinforcement Learning
+
+Reinforcement learning involves an agent interacting with an environment. The agent performs actions and receives rewards or penalties. Over time, it learns a strategy for selecting actions that maximize its expected reward.
+
+Reinforcement learning can be used for robotics, game-playing systems, navigation, and optimization problems.
+
+Ensemble Learning
+
+Ensemble learning combines multiple machine learning models to produce a stronger prediction.
+
+Important ensemble methods include Random Forest, AdaBoost, Gradient Boosting, XGBoost, LightGBM, and CatBoost.
+
+Random Forest, for example, combines predictions from many decision trees.
+
+Scikit-learn
+
+Scikit-learn is a popular Python machine learning library used primarily for traditional machine learning.
+
+It provides implementations of many machine learning algorithms and tools for data preprocessing, model training, model evaluation, feature selection, and cross-validation.
+
+Scikit-learn can be used for classification, regression, clustering, dimensionality reduction, and other machine learning tasks.
+
+PyTorch
+
+PyTorch is an open-source machine learning framework widely used for deep learning.
+
+It is particularly useful for building and training neural networks such as convolutional neural networks, recurrent neural networks, transformers, and other deep-learning architectures.
+
+PyTorch is commonly used for computer vision, natural language processing, generative AI, and large neural network models.
+
+Traditional Machine Learning vs Deep Learning
+
+Traditional machine learning typically uses algorithms such as linear regression, decision trees, random forests, support vector machines, and K-Means.
+
+Deep learning uses multi-layer neural networks that can automatically learn complex representations from data.
+
+Traditional machine learning is often effective for structured or tabular datasets, while deep learning is particularly powerful for complex data such as images, audio, video, and natural language.
+
+Summary
+
+Traditional machine learning provides a collection of algorithms for learning patterns from data. Supervised learning includes classification and regression, while unsupervised learning includes clustering and dimensionality reduction. Ensemble methods combine multiple models to improve predictions.
+
+Scikit-learn provides many tools for traditional machine learning, whereas PyTorch is primarily used for developing and training deep-learning models.
