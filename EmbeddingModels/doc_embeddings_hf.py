@@ -9,7 +9,7 @@ load_dotenv()
 
 loader = TextLoader("docs/ml.txt")
 
-docs = loader.load()
+docs_data = loader.load()
 #print(docs)
 
 embedding = HuggingFaceEndpointEmbeddings(
@@ -18,7 +18,7 @@ embedding = HuggingFaceEndpointEmbeddings(
     huggingfacehub_api_token=os.getenv("HF_ACCESS_TOKEN"),
 )
 
-text = [
+docs = [
     "Machine Learning is a branch of artificial intelligence that allows computers to learn patterns from data and make predictions or decisions without being explicitly programmed for every individual task.",
     "Supervised learning is a type of machine learning where the model is trained on labeled data. The model is trained to make predictions or decisions based on the labeled data.",
     "Unsupervised learning is a type of machine learning where the model is trained on unlabeled data. The model is trained to find patterns or relationships in the data.",
@@ -32,9 +32,9 @@ text = [
 
 
 #text = [doc.page_content for doc in docs]
-query = "what is Natural language processing and how is it related to machine learning?"
+query = "Explain Deep learning in context of ML"
 
-doc_embeddings = embedding.embed_documents(text)    
+doc_embeddings = embedding.embed_documents(docs)    
 query_embeddings = embedding.embed_query(query)
 
 print("Length of doc_embeddings: ", len(doc_embeddings))
@@ -42,7 +42,10 @@ print("Dimension of doc_embeddings: ", len(doc_embeddings[0]))
 
 # should be 2d list when passing to cosine_similarity
 scores = cosine_similarity([query_embeddings], doc_embeddings)[0]
+
+print("Similarity Scores of doc:",sorted(list(enumerate(scores)),key=lambda x:x[1]))
 index, score = sorted(list(enumerate(scores)),key=lambda x:x[1])[-1]
 
-print(text[index])
+print(query)
+print(docs[index])
 print("similarity score:",score)
