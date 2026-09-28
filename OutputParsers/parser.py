@@ -1,18 +1,23 @@
-from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
-from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_core.prompts import PromptTemplate
 from dotenv import load_dotenv
-import os
 
 load_dotenv()
+llm = ChatGoogleGenerativeAI(model="gemini-3.8-flash")
 
-# ── Model ────────────────────────────────────────────────────────────────────
-# ChatHuggingFace wraps HuggingFaceEndpoint and uses the 'conversational'
-# task — required by the Groq provider (not 'text-generation').
-_endpoint = HuggingFaceEndpoint(
-    repo_id="openai/gpt-oss-20b",
-    provider="groq",
-    huggingfacehub_api_token=os.getenv("HF_ACCESS_TOKEN"),
-    max_new_tokens=512,
+
+template1 = PromptTemplate(
+    template="Write a detailed report on {topic}",
+    input_variables=['topic']
 )
-llm = ChatHuggingFace(llm=_endpoint)
+template2 = PromptTemplate(
+    template="Write a 5 line summary on the following text.\n {text}",
+    input_variables=['text']
+)
+
+prompt1 = template1.invoke({'topic':'black hole'})
+result = llm.invoke(prompt1)
+prompt2 = template2.invoke({'text':result.content})
+
+result2 = llm.invoke(prompt2)
+print(result2.content)
